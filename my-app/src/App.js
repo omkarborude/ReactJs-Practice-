@@ -1,10 +1,31 @@
 import { useContext } from 'react';
 import './App.css';
-import { CartContext } from "./Car-Context";
+import { useCart } from "./Car-Context";
+
+const products = [
+  {
+    id:1,
+    name: "apple",
+    price: 99
+  },
+  {
+    id:2,
+    name: "mango",
+    price: 150
+  },
+]
 
 export function Cart() {
-  const { cartitems } = useContext(CartContext);
-    return <h1>Items in Cart {cartitems}</h1>
+  const { cartitems , item , setitem } = useCart()
+
+    return ( 
+   <>
+    <h1>Items in Cart {item}</h1>
+    <button
+    onClick={() => setitem(item => item + 1)}
+    >+</button>
+    </>
+    )
 }
 
 export function ProductListing() {
