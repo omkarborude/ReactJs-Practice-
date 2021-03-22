@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+import {Cartprovider} from "./Car-Context";
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Cartprovider>
     <App />
-  </React.StrictMode>,
+  </Cartprovider>,
   document.getElementById('root')
 );
 
